@@ -24,12 +24,13 @@ class HomeController extends Controller
         else{
             $About = null;
         }
-       if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%service%")->where('page_type','Group')->latest()->first()!=null){
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%service%")->where('page_type','Group')->latest()->first()!=null){
             $service_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%service%")->where('page_type','Group')->latest()->first()->id;
-            $service = Navigation::query()->where('parent_page_id',$service_id)->latest()->first();
+            $services = Navigation::query()->where('parent_page_id',$service_id)->orderBy('position','ASC')->get();
+            //return $misson;
         }
         else{
-            $service = null;
+            $services = null;
         }
       
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%jobrecruitment%")->where('page_type','Group')->latest()->first()!=null){
@@ -103,7 +104,7 @@ class HomeController extends Controller
     
         $global_setting = GlobalSetting::all()->first(); 
         //return $missons;       
-        return view("website.index")->with(['testimonial'=>$testimonial,'statistics'=>$statistics,'jobrecruitment'=>$jobrecruitment,'partners'=>$partners,'service'=>$service,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'weserves'=>$weserves,'job_categories'=>$job_categories,'message'=>$message,'jobs'=>$jobs]);
+        return view("website.index")->with(['testimonial'=>$testimonial,'statistics'=>$statistics,'jobrecruitment'=>$jobrecruitment,'partners'=>$partners,'services'=>$services,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'weserves'=>$weserves,'job_categories'=>$job_categories,'message'=>$message,'jobs'=>$jobs]);
     }
 
 
