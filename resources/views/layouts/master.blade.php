@@ -163,30 +163,24 @@ if (isset($normal)) {
                                 </div>
                                 <nav>
                                     <ul class="custom-flex main-menu">
-                                        <li class="menu-item">
-                                            <a href="index.html">Home</a>
-                                        </li>
                                         @foreach ($menus as $menu)
-                                            <li
-                                                @if ($menu->childs->count() > 0) class ="menu-item menu-item-has-children" @endif>
-                                                <a
-                                                    href="@if ($menu->nav_name == 'about') # @else /{{ $menu->nav_name }} @endif">{{ $menu->caption }}
-                                                </a>
-                                                @if ($menu->childs->count() > 0)
+                                            @php $submenus = $menu->childs; @endphp
+                                            <li @if($submenus->count()>0) class="menu-item menu-item-has-children" @else class="menu-item" @endif>
+                                                <a href="{{ route('category', $menu->nav_name) }}">{{ $menu->caption }}</a>
+                                                @foreach ($submenus as $sub)                
                                                     <ul class="custom sub-menu">
-                                                        @php $submenus = $menu->childs; @endphp
-
-                                                        @foreach ($submenus as $sub)
-                                                            <li class="menu-item">
-                                                                <a
-                                                                    href="/{{ $menu->nav_name }}/{{ $sub->nav_name }}">{{ $sub->caption }}</a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                @endif
+                                                        <li class="menu-item">
+                                                            <a
+                                                                href="{{ route('subcategory', [$menu->nav_name, $sub->nav_name]) }}">{{ $sub->caption }}
+                                                            </a>
+                                                        </li>
+                                                    </ul> 
+                                                @endforeach
                                             </li>
                                         @endforeach
                                     </ul>
+                                </nav>
+
                                 </nav>
                                 {{-- <ul class="custom-flex main-menu">
 

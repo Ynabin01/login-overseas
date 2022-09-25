@@ -43,7 +43,7 @@ class JobController extends Controller
             'caption' => 'required',
             'country' => 'required',
             'company_name' => 'required',
-            'salary' => 'required',
+            
             'icon_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'banner_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240'
 
@@ -52,21 +52,11 @@ class JobController extends Controller
 
         $company_name = $request['company_name'];
         $country = $request['country'];
-        $salary = $request['salary'];
-        $contract_time = $request['contract_time'];
-        $qualification = $request['qualification'];
-        $gender = $request['gender'];
-        $age_range = $request ['age_range'];
         $total_demand = $request ['total_demand'];
          
           //unset above data from request
           unset($request['company_name']);
           unset($request['country']);
-          unset($request['salary']);
-          unset($request['contract_time']);
-          unset($request['qualification']);
-          unset($request['gender']);
-          unset($request['age_range']);
           unset($request['total_demand']);
 
         //close
@@ -119,12 +109,9 @@ class JobController extends Controller
                     $job = new Job;            
                     $job->country = $country;    
                     $job->company_name = $company_name;
-                    $job->salary = $salary; 
-                    $job->contract_time = $contract_time; 
+                    
                     $job->navigation_id =  $navigation->id; 
-                    $job->qualification =  $qualification; 
-                    $job->gender =  $gender; 
-                    $job->age_range =  $age_range; 
+                  
                     $job->total_demand =  $total_demand; 
                        
                     $job->save();
@@ -146,34 +133,20 @@ class JobController extends Controller
 
         $company_name = $request['company_name'];
         $country = $request['country'];
-        $salary = $request['salary'];
-        $contract_time = $request['contract_time'];
+        
         $job_id = $request['job_id'];
-        $qualification = $request['qualification'];
-        $gender = $request['gender'];
-        $age_range = $request ['age_range'];
         $total_demand = $request ['total_demand'];
 
         $job = Job::find($job_id);            
         $job->country = $country;    
         $job->company_name = $company_name;
-        $job->salary = $salary; 
-        $job->contract_time = $contract_time; 
-        $job->qualification	= $qualification;	
-        $job->gender = $gender;
-        $job->age_range = $age_range;
         $job->total_demand = $total_demand;
             
         $job->save();
           //unset above data from request
           unset($request['company_name']);
           unset($request['country']);
-          unset($request['salary']);
-          unset($request['contract_time']);
           unset($request['job_id']);
-          unset($request['qualification']);
-          unset($request['gender']);
-          unset($request['age_range']);
           unset($request['total_demand']);
 
         $request->offsetUnset('_token');

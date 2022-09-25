@@ -7,6 +7,7 @@
             </div>
         </div>
         <div class="row">
+           
             <div class="col-12">
                 <div class="service-slider style-2 row">
                     <div class="col-12 slide-item">
@@ -27,7 +28,7 @@
                     <div class="col-12 slide-item">
                         <div class="service-block-3">
                             <div class="service-image animate-img">
-                                <img src="website/images/service-2.jpg" class="image-fit" alt="">
+                                <img src="/website/images/service-2.jpg" class="image-fit" alt="">
                             </div>
                             <div class="service-caption">
                                 <div class="left-side">
@@ -43,7 +44,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-3.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-3.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">
@@ -58,7 +59,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-4.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-4.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">
@@ -88,7 +89,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-6.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-6.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">
@@ -103,7 +104,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-8.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-8.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">
@@ -118,7 +119,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-9.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-9.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">
@@ -133,7 +134,7 @@
                 <div class="col-12 slide-item">
                     <div class="service-block-3">
                         <div class="service-image animate-img">
-                            <img src="website/images/service-10.jpg" class="image-fit" alt="">
+                            <img src="/website/images/service-10.jpg" class="image-fit" alt="">
                         </div>
                         <div class="service-caption">
                             <div class="left-side">

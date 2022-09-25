@@ -11,9 +11,9 @@
                             <li><a href="/">Home</a></li>
                             <li>Gallery</li>
                         </ul>
-                    </div>
+                    </div>   
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     <!-- End Subheader -->

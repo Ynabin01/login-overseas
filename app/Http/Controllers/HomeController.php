@@ -94,13 +94,19 @@ class HomeController extends Controller
         //     $jobs = null;
         // }
         //return $misson;
+
+
         $category = Navigation::all()->where('page_type','Group Jobcategory');
         if($category->count()>0){
             $category_id = $category->first()->id;
             $job_categories = Navigation::all()->where('parent_page_id',$category_id);
         }
         
-        // return $job_categories;
+
+
+
+
+       
     
         $global_setting = GlobalSetting::all()->first(); 
         //return $missons;       
@@ -187,6 +193,11 @@ class HomeController extends Controller
             $category_type = null;
         }
    
+        if($category_type == "Group Jobcategory"){
+            //return "return to page gallary";
+            $job_categories = Navigation::query()->where('page_type','Group Jobcategory')->where('page_status','1')->latest()->get();
+            return view("website.jobcategories")->with([ 'job_categories'=>$job_categories,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+        }
 
         if($category_type == "Photo Gallery"){
             //return "return to page gallary";
@@ -208,7 +219,7 @@ class HomeController extends Controller
             //return $category_id;
             $normal = Navigation::find($category_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
-            return category_type=="sad";
+            // return category_type=="sad";
         }
         else{
             if($jobs!=null){   
@@ -428,7 +439,8 @@ class HomeController extends Controller
         // $slug1 = Navigation::where('nav_name',joblist)
         $category_id = Navigation::all()->where('nav_name',$category_name)->first()->id;
         $jobs = Navigation::query()->where('parent_page_id',$category_id)->get();
-        return view('website.job-list-cat')->with(['jobs'=>$jobs,'slug1'=>$slug1,]);
+
+        return view('website.job_detail_single_page')->with(['jobs'=>$jobs,'slug1'=>$slug1,]);
     }
     public function GotoGallery($slug){
         $navigation_id = Navigation::all()->where('nav_name',$slug)->first()->id;
@@ -436,6 +448,6 @@ class HomeController extends Controller
         return view("website.photogallery")->with(['photos'=>$photos,]);
     }
   
-}
+} 
 
 

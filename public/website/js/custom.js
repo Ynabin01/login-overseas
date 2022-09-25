@@ -58,7 +58,6 @@
     })
     // Navigation
     $('.menu-item-has-children>a').on('click', function() {
-        $(this).removeAttr('href');
         var element = $(this).parent('li');
         if (element.hasClass('open')) {
             element.removeClass('open');
