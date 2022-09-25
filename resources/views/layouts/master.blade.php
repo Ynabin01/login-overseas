@@ -165,17 +165,21 @@ if (isset($normal)) {
                                     <ul class="custom-flex main-menu">
                                         @foreach ($menus as $menu)
                                             @php $submenus = $menu->childs; @endphp
-                                            <li @if($submenus->count()>0) class="menu-item menu-item-has-children" @else class="menu-item" @endif>
-                                                <a href="{{ route('category', $menu->nav_name) }}">{{ $menu->caption }}</a>
-                                                @foreach ($submenus as $sub)                
-                                                    <ul class="custom sub-menu">
+                                            <li
+                                                @if ($submenus->count() > 0) class="menu-item menu-item-has-children" @else class="menu-item" @endif>
+                                                <a
+                                                    href="{{ route('category', $menu->nav_name) }}">{{ $menu->caption }}</a>
+                                                <ul class="custom sub-menu">
+                                                    @php $submenus = $menu->childs; @endphp
+                                                    
+                                                    @foreach ($submenus as $sub)
                                                         <li class="menu-item">
                                                             <a
                                                                 href="{{ route('subcategory', [$menu->nav_name, $sub->nav_name]) }}">{{ $sub->caption }}
                                                             </a>
                                                         </li>
-                                                    </ul> 
-                                                @endforeach
+                                                    @endforeach
+                                                </ul>
                                             </li>
                                         @endforeach
                                     </ul>

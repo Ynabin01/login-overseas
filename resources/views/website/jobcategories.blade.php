@@ -14,7 +14,7 @@
                                 <div class="left-side">
                                     <h4 class="fw-600 no-margin"><a href="{{ route('JobList', $cat->nav_name) }}">{{ $cat->caption }}</a>
                                 </div>
-                                <a href="/JobList" class="block-btn">
+                                <a href="{{ route('JobList', $cat->nav_name) }}" class="block-btn">
                                     <i class="fal fa-arrow-right"></i>
                                 </a>
                             </div>
