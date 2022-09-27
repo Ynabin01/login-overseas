@@ -336,16 +336,16 @@ if (isset($normal)) {
                             <h5 class="fw-600">About Us<span class="text-white">.</span></h5>
                             <ul class="custom">
                                 <li>
-                                    <a href="inner">About Company</a>
+                                    <a href="/inner">About Company</a>
                                 </li>
                                 <li>
-                                    <a href="legal_documentation">Legal Documents</a>
+                                    <a href="/legal_documentation">Legal Documents</a>
                                 </li>
                                 <li>
-                                    <a href="team">Board Member</a>
+                                    <a href="/team">Board Member</a>
                                 </li>
                                 <li>
-                                    <a href="chart">Organization Chart</a>
+                                    <a href="/chart">Organization Chart</a>
                                 </li>
                             </ul>
                         </div>
@@ -355,16 +355,16 @@ if (isset($normal)) {
                             <h5 class="fw-600">Usefull Links<span class="text-white">.</span></h5>
                             <ul class="custom">
                                 <li>
-                                    <a href="job_category">Job</a>
+                                    <a href="/jobs">Job</a>
                                 </li>
                                 <li>
-                                    <a href="gallery">Gallery</a>
+                                    <a href="/gallery">Gallery</a>
                                 </li>
                                 <li>
-                                    <a href="service">Services</a>
+                                    <a href="/service">Services</a>
                                 </li>
                                 <li>
-                                    <a href="contact">Contact</a>
+                                    <a href="/contact">Contact</a>
                                 </li>
                             </ul>
                         </div>
