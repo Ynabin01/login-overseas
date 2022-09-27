@@ -20,7 +20,7 @@
                                             <div class="right-side">
                                                 <div class="section-header left-heading">
                                                     <div class="section-heading">
-                                                        <h4 class="text-blue fw-700">{{$service->content}}</h4>
+                                                        <h4 class="text-blue fw-700">{{$service->caption}}</h4>
                                                         <p class="desc">{{$service->short_content}}</p>
                                                     </div>
                                                 </div>
@@ -32,7 +32,7 @@
                                             <div class="right-side">
                                                 <div class="section-header left-heading">
                                                     <div class="section-heading">
-                                                        <h4 class="text-blue fw-700">{{$service->content}}</h4>
+                                                        <h4 class="text-blue fw-700">{{$service->caption}}</h4>
                                                         <p class="desc">{{$service->short_content}}</p>
                                                     </div>
                                                 </div>
