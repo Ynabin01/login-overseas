@@ -4725,7 +4725,7 @@ ul.custom-flex.ft-social li:first-child a{
 }
 .form-container {
     padding: 30px;
-    background: url(../images/black-bc.png) repeat;
+    background: #fff;
     background-size: auto;
     background-attachment: fixed;
     display: flex;

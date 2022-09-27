@@ -69,6 +69,7 @@ if (isset($normal)) {
     <link rel="shortcut icon" href="{{ $global_setting->favicon }}">
     <!-- Plugin -->
     <link href="/website/css/plugin.css" rel="stylesheet">
+    <link rel="stylesheet" href='https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css'>
     <!-- Custom Stylesheet -->
     <link href="/website/css/style.css" rel="stylesheet">
     <!-- Custom Responsive -->
@@ -259,7 +260,7 @@ if (isset($normal)) {
 
                                 </nav>
                                 <div class="nav-right">
-                                    <a href="#" class="theme-btn btn-white-border">Apply Now</a>
+                                    <a href="#" id="btnOpenFormbutton" class="theme-btn btn-white-border">Apply Now</a>
                                 </div>
                             </div>
                         </div>
@@ -422,6 +423,38 @@ if (isset($normal)) {
                 </div>
             </div>
         </footer>
+        <!-- Apply pop up form -->
+    <div class="form-popup-bg">
+        <div class="form-container">
+            <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
+            <h4>Application Form</h4>
+            <p class="text-custom-logo">Cashier Urgently Needed</p>
+            <form method="POST" action="{{ route('contactstore') }}" enctype='multipart/form-data'>
+                @csrf
+                <div class="form-group">
+                    <label for="first_name">Full Name</label>
+                    <input name="first_name" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="message">Applying For</label>
+                    <input name="message" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail Address</label>
+                    <input name="email" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="number">Phone Number</label>
+                    <input name="number" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="file">Upload your CV</label>
+                    <input name="file" type="file" class="form-control file-upload">
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
 
         <div id="back-top" class="back-top">
             <a href="#top"><i class="fal fa-long-arrow-up"></i></a>
@@ -449,6 +482,25 @@ if (isset($normal)) {
         <!-- Custom Js -->
         <script src="/website/js/custom.js"></script>
         <!-- /Place all Scripts Here -->
+        
+        <!-- gllery js -->
+        
+    <script src="/website/js/gallery/picturefill.min.js"></script>
+    <script src="/website/js/gallery/lightgallery.js"></script>
+    <script src="/website/js/gallery/lg-pager.js"></script>
+    <script src="/website/js/gallery/lg-autoplay.js"></script>
+    <script src="/website/js/gallery/lg-fullscreen.js"></script>
+    <script src="/website/js/gallery/lg-zoom.js"></script>
+    <script src="/website/js/gallery/lg-hash.js"></script>
+    <script src="/website/js/gallery/lg-share.js"></script>
+    <!--End gllery js -->
+     <!-- Custom Js -->
+     <script src="/website/js/custom.js"></script>
+
+     
+    <script>
+        lightGallery(document.getElementById('lightgallery'));
+    </script>
     </body>
 
 </html>

@@ -28,7 +28,7 @@
                         <a href="">
                             <img src="/uploads/photo_gallery/{{$photo->file}}" alt="Login Int'l" />
                         </a>
-                    </div>
+                    </div> 
                     @endforeach
                 </div>
             </div>

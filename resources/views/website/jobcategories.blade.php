@@ -26,36 +26,5 @@
     </section>
     <!-- End Portfolio -->
 
-    <!-- Apply pop up form -->
-    <div class="form-popup-bg">
-        <div class="form-container">
-            <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
-            <h4>Application Form</h4>
-            <p class="text-custom-logo">Cashier Urgently Needed</p>
-            <form method="POST" action="{{ route('contactstore') }}" enctype='multipart/form-data'>
-                @csrf
-                <div class="form-group">
-                    <label for="first_name">Full Name</label>
-                    <input name="first_name" type="text" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="message">Applying For</label>
-                    <input name="message" class="form-control" type="text" />
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail Address</label>
-                    <input name="email" class="form-control" type="text" />
-                </div>
-                <div class="form-group">
-                    <label for="number">Phone Number</label>
-                    <input name="number" class="form-control" type="text" />
-                </div>
-                <div class="form-group">
-                    <label for="file">Upload your CV</label>
-                    <input name="file" type="file" class="form-control file-upload">
-                </div>
-                <button>Submit</button>
-            </form>
-        </div>
-    </div>
+    
 @endsection

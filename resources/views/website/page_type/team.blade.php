@@ -28,7 +28,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="team-block-2 p-relative mb-xl-30">
                             <div class="team-image animate-img">
-                                <img src="website/images/faq-man.png" class="image-fit" alt="">
+                                <img src="/website/images/faq-man.png" class="image-fit" alt="">
                             </div>
                             <ul class="team-social-media custom">
                                 <li>
@@ -59,72 +59,45 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3"></div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="team-block-2 p-relative mb-xl-30">
-                            <div class="team-image animate-img">
-                                <img src="website/images/team-5.jpg" class="image-fit" alt="">
-                            </div>
-                            <ul class="team-social-media custom">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="team-caption">
-                                <h4 class="fw-600 mb-1"><a href="#">Rajan Pokharel</a></h4>
-                                <p class="no-margin fw-500 double-lines text-orange"><span>Managing director</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="team-block-2 p-relative mb-md-30">
-                            <div class="team-image animate-img">
-                                <img src="website/images/team-4.jpg" class="image-fit" alt="">
-                            </div>
-                            <ul class="team-social-media custom">
-                                <li>
-                                    <a href="#">
-                                        <i class="fal fa-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="team-caption">
-                                <h4 class="fw-600 mb-1"><a href="#">Deepak Sharma</a></h4>
-                                <p class="no-margin fw-500 double-lines text-orange"><span>Finance Director</span></p>
+                    
+                    @foreach ($teams as $team )
+                      
+                        <div class="col-lg-6 col-md-6">
+                            <div class="team-block-2 p-relative mb-xl-30">
+                                <div class="team-image animate-img">
+                                    <img src="{{$team->banner_image}}" class="image-fit" alt="">
+                                </div>
+                                <ul class="team-social-media custom">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fal fa-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="team-caption">
+                                    <h4 class="fw-600 mb-1"><a href="#">{{$team->caption}}</a></h4>
+                                    <p class="no-margin fw-500 double-lines text-orange"><span>{{$team->short_content}}</span></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                      
+                    @endforeach
+                  
                 </div>
                 </div>
             </div>
@@ -132,21 +105,13 @@
                 <div class="sidebar">
                     <div class="widget categories-widget mb-xl-30">
                         <ul class="custom">
-                            <li>
-                                <a href="inner">About Company</a>
-                            </li>
-                            <li>
-                                <a href="message">Chairman Message</a>
-                            </li>
-                            <li>
-                                <a href="team" class="active">Our Team</a>
-                            </li>
-                            <li>
-                                <a href="chart">Organization Chart</a>
-                            </li>
-                            <li>
-                                <a href="legal_documentation">Legal Documentation</a>
-                            </li>
+                            @foreach ($childs as $child)
+
+                                <li>
+                                    <a href="/{{$slug1->nav_name}}/{{$child->nav_name}}">{{$child->caption}}</a>
+                                </li>
+                            @endforeach                         
+                            
                         </ul>
                     </div>
                     <div class="widget popular-feeds mb-xl-30">
