@@ -20,68 +20,70 @@
     <!-- End Subheader -->
 
     <!-- Start Portfolio -->
-    <section class="project-details section-padding"> 
+    <section class="project-details section-padding">
         <div class="container">
             @if (isset($jobs))
                 @foreach ($jobs as $job)
-            <div class="row">
-                
-                <div class="project-head">
-                    <ul class="custom-flex details">
-                        <li>
-                            <h5 class="fw-700">{{ $job->caption}}</h5>
-                            <p class="fw-500 fs-12 text-custom-logo">{{ $job->getJob->total_demand}}</p>
-                        </li>
-                        <li>
-                            <img src="{{ $job->banner_image}}" alt="default-img">
-                        </li>
-                        <li>
-                            <h5 class="fw-500">{{ $job->getJob->company_name }}</h5>
-                            <p class="fw-500 fs-12"><i class="fa fa-map-marker-alt text-custom-logo"></i> {{ $job->getJob->country }}</p>
-                        </li>
-                    </ul>
-                    <div class="action">
-                        <a href="#" id="btnOpenForm" class="theme-btn btn-blue">Apply Now<i
-                                class="fal fa-plus"></i></a>
-                    </div>
-                </div>
-               
-                <!-- End Portfolio -->
+                    <div class="row">
 
-                <!-- Apply pop up form -->
-                <div class="form-popup-bg">
-                    <div class="form-container">
-                        <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
-                        <h4>Application Form</h4>
-                        <p class="text-custom-logo">Cashier Urgently Needed</p>
-                        <form action="">
-                            <div class="form-group">
-                                <label for="">Full Name</label>
-                                <input type="text" class="form-control" />
+                        <div class="project-head">
+                            <ul class="custom-flex details">
+                                <li>
+                                    <h5 class="fw-700">{{ $job->caption }}</h5>
+                                    <p class="fw-500 fs-12 text-custom-logo">{{ $job->getJob->total_demand }}</p>
+                                </li>
+                                <li>
+                                    <img src="{{ $job->banner_image }}" alt="default-img">
+                                </li>
+                                <li>
+                                    <h5 class="fw-500">{{ $job->getJob->company_name }}</h5>
+                                    <p class="fw-500 fs-12"><i class="fa fa-map-marker-alt text-custom-logo"></i>
+                                        {{ $job->getJob->country }}</p>
+                                </li>
+                            </ul>
+                            <div class="action">
+                                <a href="#" id="btnOpenForm" class="theme-btn btn-blue">Apply Now<i
+                                        class="fal fa-plus"></i></a>
                             </div>
-                            <div class="form-group">
-                                <label for="">Applying For</label>
-                                <input class="form-control" type="text" />
+                        </div>
+
+                        <!-- End Portfolio -->
+
+                        <!-- Apply pop up form -->
+                        <div class="form-popup-bg">
+                            <div class="form-container">
+                                <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
+                                <h4>Application Form</h4>
+                                <p class="text-custom-logo">Cashier Urgently Needed</p>
+                                <form method="POST" action="{{ route('contactstore') }}" enctype='multipart/form-data'>
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="first_name">Full Name</label>
+                                        <input name="first_name" type="text" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Applying For</label>
+                                        <input name="message" class="form-control" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-Mail Address</label>
+                                        <input name="email" class="form-control" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number">Phone Number</label>
+                                        <input name="number" class="form-control" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="file">Upload your CV</label>
+                                        <input name="file" type="file" class="form-control file-upload">
+                                    </div>
+                                    <button>Submit</button>
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <label for="">E-Mail Address</label>
-                                <input class="form-control" type="text" />
-                            </div>
-                            <div class="form-group">
-                                <label for="">Phone Number</label>
-                                <input class="form-control" type="text" />
-                            </div>
-                            <div class="form-group">
-                                <label for="">Upload your CV</label>
-                                <input type="file" class="form-control file-upload">
-                            </div>
-                            <button>Submit</button>
-                        </form>
-                    </div>
-                </div>
+                        </div>
                 @endforeach
-                @endif
-            </div>
+            @endif
+        </div>
         </div>
     </section>
 @endsection

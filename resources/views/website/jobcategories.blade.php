@@ -32,26 +32,27 @@
             <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
             <h4>Application Form</h4>
             <p class="text-custom-logo">Cashier Urgently Needed</p>
-            <form action="">
+            <form method="POST" action="{{ route('contactstore') }}" enctype='multipart/form-data'>
+                @csrf
                 <div class="form-group">
-                    <label for="">Full Name</label>
-                    <input type="text" class="form-control" />
+                    <label for="first_name">Full Name</label>
+                    <input name="first_name" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label for="">Applying For</label>
-                    <input class="form-control" type="text" />
+                    <label for="message">Applying For</label>
+                    <input name="message" class="form-control" type="text" />
                 </div>
                 <div class="form-group">
-                    <label for="">E-Mail Address</label>
-                    <input class="form-control" type="text" />
+                    <label for="email">E-Mail Address</label>
+                    <input name="email" class="form-control" type="text" />
                 </div>
                 <div class="form-group">
-                    <label for="">Phone Number</label>
-                    <input class="form-control" type="text" />
+                    <label for="number">Phone Number</label>
+                    <input name="number" class="form-control" type="text" />
                 </div>
                 <div class="form-group">
-                    <label for="">Upload your CV</label>
-                    <input type="file" class="form-control file-upload">
+                    <label for="file">Upload your CV</label>
+                    <input name="file" type="file" class="form-control file-upload">
                 </div>
                 <button>Submit</button>
             </form>

@@ -83,7 +83,7 @@ class ContactController extends Controller
         $contact = new Contact;
         $contact->first_name = $req['first_name'];
         $contact->last_name = $req['last_name'];
-        $contact->number = $req['number'];
+        $contact->number = $req['number']; 
         $contact->email = $req['email'];
         $contact->file = $name;
         $contact->message = $req['message'];

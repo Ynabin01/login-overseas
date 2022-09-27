@@ -1,27 +1,87 @@
-
-			
-
-
 @extends('layouts.master')
-    @section("contents")
-       
-			<!--
-			=====================================================
-				Google Map
-			=====================================================
-			-->
-			<!-- Google Map -->
-			<!-- <div class="google-map-two">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.511178424314!2d85.281466!3d27.693948!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe25fdd5d858e0cbe!2sKalanki%20Bus%20Stop!5e0!3m2!1sen!2snp!4v1657622982275!5m2!1sen!2snp" width="100%" height="368px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div> -->
+@section('contents')
+    <!--
+       =====================================================
+        Google Map
+       =====================================================
+       -->
+    <!-- Google Map -->
+    <!-- <div class="google-map-two">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.511178424314!2d85.281466!3d27.693948!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe25fdd5d858e0cbe!2sKalanki%20Bus%20Stop!5e0!3m2!1sen!2snp!4v1657622982275!5m2!1sen!2snp" width="100%" height="368px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       </div> -->
 
 
-			<!-- 
-			=============================================
-				Conatct us Section
-			============================================== 
-			-->
-		
+    <!--
+       =============================================
+        Conatct us Section
+       ==============================================
+       -->
+
+    <!-- Apply pop up form -->
+    <div class="form-popup-bg">
+        <div class="form-container">
+            <button id="btnCloseForm" class="close-button fa fa-times-circle"></button>
+
+            <h4>Application Form</h4>
+            <p class="text-custom-logo"> Needed</p>
+            <form action="{{ route('contactstore') }}" enctype='multipart/form-data'>
+				@csrf
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" placeholder="hsgjaf"/>
+                </div>
+                <div class="form-group">
+                    <label for="text">Applying For</label>
+                    <input class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail Address</label>
+                    <input class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="number">Phone Number</label>
+                    <input class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="file">Upload your CV</label>
+                    <input type="file" class="form-control file-upload">
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+    <!--Contact Form Validation Markup -->
+    <!-- Contact alert -->
+    <div class="alert-wrapper" id="alert-success">
+        <div id="success">
+            <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div class="wrapper">
+                <p>Your message was sent successfully.</p>
+            </div>
+        </div>
+    </div> <!-- End of .alert_wrapper -->
+    <div class="alert-wrapper" id="alert-error">
+        <div id="error">
+            <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div class="wrapper">
+                <p>Sorry!Something Went Wrong.</p>
+            </div>
+        </div>
+    </div> <!-- End of .alert_wrapper -->
+    </div> <!-- /.contact-us-section -->
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+{{-- 		
 			<div class="contact-us-section section-spacing">
 				<div class="container">
 					<div class="theme-title-one">
@@ -76,7 +136,4 @@
 			        </div>
 			    </div> <!-- End of .alert_wrapper -->
 			</div> <!-- /.contact-us-section -->
-        @include("website.partner")
-@endsection
-
-	
+        @include("website.partner") --}}
