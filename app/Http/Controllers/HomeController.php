@@ -203,7 +203,7 @@ class HomeController extends Controller
         }
         elseif($category_type == "Service"){
             // return "return to view Notice";
-            $services = Navigation::query()->where('parent_page_id',$category_id)->latest()->get();
+            $services = Navigation::query()->where('parent_page_id',$category_id)->orderBy('created_at', 'ASC')->get();
             $notice_heading = Navigation::find('parent_page_id');
             // return $notice_heading;
             return view("website.page_type.service")->with(['services'=>$services,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1]);
