@@ -186,7 +186,7 @@ class HomeController extends Controller
    
         if($category_type == "Group Jobcategory"){
             //return "return to page gallary";
-            $job_categories = Navigation::query()->where('page_type','Group Jobcategory')->where('page_status','1')->latest()->get();
+            $job_categories = Navigation::query()->where('page_type','Group Jobcategory')->where('page_status','1')->orderBy('created_at', 'ASC')->get();
             return view("website.jobcategories")->with([ 'job_categories'=>$job_categories,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,]);
         }
 
