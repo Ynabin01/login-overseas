@@ -11,7 +11,7 @@
                         </h2>
                         <!-- Details -->
                         
-                        <p class="fw-500">{{$normal->short_content}}</p>
+                        <p class="fw-500">@php echo $normal->short_content @endphp</p>
                         <!-- post image -->
                         @if(strlen($normal->banner_image)>5)
                             <div class="post-image animate-img">
