@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('website.breadcrumb')
     <!-- Start News -->
     <section class="section-padding bg-light-white">
         <div class="container">

@@ -206,7 +206,7 @@ class HomeController extends Controller
             $services = Navigation::query()->where('parent_page_id',$category_id)->latest()->get();
             $notice_heading = Navigation::find('parent_page_id');
             // return $notice_heading;
-            return view("website.page_type.service")->with(['services'=>$services,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            return view("website.page_type.service")->with(['services'=>$services,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1]);
         }
         elseif($category_type == "Notice"){
             // return "return to view Notice";

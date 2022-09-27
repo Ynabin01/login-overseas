@@ -1,5 +1,5 @@
   <!-- Start Subheader -->
-  <div class="normal-bg subheader" style="background-image: url('assets/images/subheader.jpg');">
+  <div class="normal-bg subheader" style="background-image: url('/website/images/subheader.jpg');">
       <div class="container">
           <div class="row">
               <div class="col-12">
