@@ -13,15 +13,15 @@
                                     @if($key%2==0)
                                         <div class="col-lg-6">
                                             <div class="left-side full-height">
-                                                <img src="assets/images/consulting-1.jpg" class="image-fit" alt="">
+                                                <img src="{{$service->banner_image}}" class="image-fit" alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="right-side">
                                                 <div class="section-header left-heading">
                                                     <div class="section-heading">
-                                                        <h4 class="text-blue fw-700">Consulting</h4>
-                                                        <p class="desc">We deal with every individual and find their core qualities and forward their necessary documents to employer of the company. People who seek to develop their careers in abroad. We are the obvious choice to consult with. Our team of expert counselors welcomes the candidates with open arms for counseling. On the other hand. We are consulting with companies and industries as well to place qualitative human resources.</p>
+                                                        <h4 class="text-blue fw-700">{{$service->content}}</h4>
+                                                        <p class="desc">{{$service->short_content}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -32,15 +32,15 @@
                                             <div class="right-side">
                                                 <div class="section-header left-heading">
                                                     <div class="section-heading">
-                                                        <h4 class="text-blue fw-700">Consulting</h4>
-                                                        <p class="desc">We deal with every individual and find their core qualities and forward their necessary documents to employer of the company. People who seek to develop their careers in abroad. We are the obvious choice to consult with. Our team of expert counselors welcomes the candidates with open arms for counseling. On the other hand. We are consulting with companies and industries as well to place qualitative human resources.</p>
+                                                        <h4 class="text-blue fw-700">{{$service->content}}</h4>
+                                                        <p class="desc">{{$service->short_content}}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="left-side full-height">
-                                                <img src="assets/images/consulting-1.jpg" class="image-fit" alt="">
+                                                <img src="{{$service->banner_image}}" class="image-fit" alt="">
                                             </div>
                                         </div>
                                     @endif
